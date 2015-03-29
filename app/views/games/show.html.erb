@@ -6,7 +6,7 @@
   <tr class="header">
     <% (0..6).each do |col| %>
     <td id="header-col<%= col %>">
-      <%= link_to(image_tag('transparent.png'), url_for(controller: :boards, action: :drop_piece, column: col), remote: true) %>
+      <%= link_to(image_tag('/images/transparent.png'), url_for(controller: :boards, action: :drop_piece, column: col), remote: true) %>
     </td>
     <% end %>
   </tr>

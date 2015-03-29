@@ -9,7 +9,7 @@
 
 .row td {
     width: 100px;
-    background-image: image-url('board_cell.png');
+    background-image: url('/images/board_cell.png');
 }
 
 .header td img {
@@ -19,5 +19,5 @@
 
 .header td:hover {
     //TODO: Use color piece of the player!!!
-    background-image: image-url('red_piece.png');
+    background-image: url('/images/red_piece.png');
 }
