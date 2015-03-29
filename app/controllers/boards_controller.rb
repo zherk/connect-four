@@ -9,7 +9,7 @@ class BoardsController < ApplicationController
       change_turn
       render 'drop_piece', format: 'js'
     else
-      flash[:error] = 'The space is full'
+      flash[:error] = 'The column is full'
       render 'error'
     end
   end
