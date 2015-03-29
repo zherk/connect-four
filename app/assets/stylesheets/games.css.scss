@@ -1,3 +1,23 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.board tr {
+    height: 100px;
+}
+
+.row td {
+    width: 100px;
+    background-image: url('/assets/board_cell.png');
+}
+
+.header td img {
+    width: 100px;
+    height: 100px;
+}
+
+.header td:hover {
+    //TODO: Use color piece of the player!!!
+    background-image: url('/assets/red_piece.png');
+}

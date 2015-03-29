@@ -1,14 +1,80 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Next turn:</strong>
-  <%= @game.next_turn %>
-</p>
+<h1>Connect Four!</h1>
 
-<p>
-  <strong>Status:</strong>
-  <%= @game.status %>
-</p>
+<table class="board">
+  <tr class="header">
+    <% (0..6).each do |col| %>
+    <td id="header-col<%= col %>">
+      <%= link_to(image_tag('transparent.png'), url_for(controller: :boards, action: :drop_piece, column: col), remote: true) %>
+    </td>
+    <% end %>
+  </tr>
+  <tr class="row" id="row-0">
+    <td id="row0-col0"></td>
+    <td id="row0-col1"></td>
+    <td id="row0-col2"></td>
+    <td id="row0-col3"></td>
+    <td id="row0-col4"></td>
+    <td id="row0-col5"></td>
+    <td id="row0-col6"></td>
+  </tr>
+  <tr class="row" id="row-1">
+    <td id="row1-col0"></td>
+    <td id="row1-col1"></td>
+    <td id="row1-col2"></td>
+    <td id="row1-col3"></td>
+    <td id="row1-col4"></td>
+    <td id="row1-col5"></td>
+    <td id="row1-col6"></td>
+  </tr>
+  <tr class="row" id="row-2">
+    <td id="row2-col0"></td>
+    <td id="row2-col1"></td>
+    <td id="row2-col2"></td>
+    <td id="row2-col3"></td>
+    <td id="row2-col4"></td>
+    <td id="row2-col5"></td>
+    <td id="row2-col6"></td>
+  </tr>
+  <tr class="row" id="row-3">
+    <td id="row3-col0"></td>
+    <td id="row3-col1"></td>
+    <td id="row3-col2"></td>
+    <td id="row3-col3"></td>
+    <td id="row3-col4"></td>
+    <td id="row3-col5"></td>
+    <td id="row3-col6"></td>
+  </tr>
+  <tr class="row" id="row-4">
+    <td id="row4-col0"></td>
+    <td id="row4-col1"></td>
+    <td id="row4-col2"></td>
+    <td id="row4-col3"></td>
+    <td id="row4-col4"></td>
+    <td id="row4-col6"></td>
+    <td id="row4-col7"></td>
+  </tr>
+  <tr class="row" id="row-5">
+    <td id="row5-col0"></td>
+    <td id="row5-col1"></td>
+    <td id="row5-col2"></td>
+    <td id="row5-col3"></td>
+    <td id="row5-col4"></td>
+    <td id="row5-col5"></td>
+    <td id="row5-col6"></td>
+  </tr>
+</table>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+
+<script>
+    <% (@game.board.columns).each do |col| %>
+      <% col.rows.each do |row| %>
+      var color = "#ffee35";
+      <% if row.user.name == 'Red' %>
+      color = "#ff1440";
+      <% end %>
+      $("#row<%= 6 - row.row_number %>-col<%= @col.col_ordinal %>").css("background-color", color);
+      <% end %>
+    <% end %>
+</script>

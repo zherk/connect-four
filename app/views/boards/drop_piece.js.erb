@@ -1,0 +1,7 @@
+var color = "#ffee35";
+<% if @user.name == 'Red' %>
+color = "#ff1440";
+<% end %>
+
+$("#row<%= 6 - @row_number %>-col<%= @column.col_ordinal %>").css("background-color", color);
+$('#notice').text("");

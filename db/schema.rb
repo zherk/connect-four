@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329115835) do
+ActiveRecord::Schema.define(version: 20150329142357) do
 
   create_table "boards", force: true do |t|
     t.integer  "game_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20150329115835) do
   create_table "columns", force: true do |t|
     t.integer  "board_id"
     t.string   "column_name"
-    t.integer  "order"
+    t.integer  "col_ordinal"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 20150329115835) do
   create_table "rows", force: true do |t|
     t.integer  "column_id"
     t.integer  "row_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

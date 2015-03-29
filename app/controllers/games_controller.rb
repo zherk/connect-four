@@ -1,24 +1,12 @@
 class GamesController < ApplicationController
-  before_action :set_game, only: [:show, :edit, :update, :destroy]
-
-  # GET /games
-  # GET /games.json
-  def index
-    @games = Game.all
-  end
+  before_action :set_game, only: [:edit, :update, :destroy]
 
   # GET /games/1
   # GET /games/1.json
   def show
-  end
-
-  # GET /games/new
-  def new
-    @game = Game.new
-  end
-
-  # GET /games/1/edit
-  def edit
+    session[:user_id] = User.find(params[:id]).id
+    @game =  Game.first
+    session[:game_id] = @game.id
   end
 
   # POST /games

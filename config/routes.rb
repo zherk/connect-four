@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  #FIXME: Should be POST, but the UI needs to be changed
+  get 'boards/drop_piece'
+
   resources :games
 
   # The priority is based upon order of creation: first created -> highest priority.

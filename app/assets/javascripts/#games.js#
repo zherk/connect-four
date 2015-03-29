@@ -2,6 +2,7 @@
 // All this logic will automatically be available in application.js.
 
 
-$(".header td").click(function() {
-  $(this).prop('background-image', 'url(/assets/red_piece.png)');
-});
+//$(".header td").click(function() {
+//  var col = $(this).data('column');
+//  $(this).prop('background-image', 'url(/assets/red_piece.png)');
+//});
