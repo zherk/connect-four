@@ -28,6 +28,6 @@ class BoardsController < ApplicationController
   def change_turn
     next_user = User.where.not(id: @user.id).first
     @game.next_turn = next_user.name
-    @game.save!
+    @game.save
   end
 end

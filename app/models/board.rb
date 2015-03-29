@@ -1,7 +1,7 @@
 class Board < ActiveRecord::Base
   belongs_to :game
   has_many :columns
-  before_save :create_columns
+  before_create :create_columns
 
   def create_columns
     i = 0
