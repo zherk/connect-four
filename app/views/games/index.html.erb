@@ -1,27 +1,4 @@
-<h1>Listing games</h1>
+<h1>Connect four!</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Next turn</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= game.next_turn %></td>
-        <td><%= game.status %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Game', new_game_path %>
+<%= link_to "User 1", action: :show, id: 1 %>
+<%= link_to "User 2", action: :show, id: 2 %>
